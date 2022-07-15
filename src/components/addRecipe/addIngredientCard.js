@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 class ingredientCard extends Component {
   constructor() {
     super();
@@ -14,6 +14,7 @@ class ingredientCard extends Component {
       isValid: false,
     };
   }
+
 
   handleChangeQuantity = (e) => {
     const re = /^[0-9\b]+$/;
@@ -138,17 +139,16 @@ class ingredientCard extends Component {
         <ul id="ingredient-list" className="mt-4">
           {this.state.ingredients.map((ingredient) => (
             <li key={ingredient.quantity_id} className="mb-2">
-              <b>
-                {ingredient.ingredient_quantity}{" "}
-                {ingredient.measurement_abbreviation}
-              </b>{" "}
-              {ingredient.ingredient_name}
-              <button
-                className="btn bg-gradient-danger delete-button mb-0"
-                onClick={() => this.handleDelete(ingredient.id)}
-              >
-                X
-              </button>
+              <div className="d-flex align-items-center justify-content-between">
+                <div id="ingredient_quantity">
+                  <b>
+                    {ingredient.ingredient_quantity}{" "}
+                    {ingredient.measurement_abbreviation}
+                  </b>{" "}
+                  {ingredient.ingredient_name}
+                </div>
+                <FontAwesomeIcon icon="times" className="text-danger hover-danger" onClick={() => this.handleDelete(ingredient.id)} />
+              </div>
             </li>
           ))}
         </ul>

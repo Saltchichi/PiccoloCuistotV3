@@ -1,7 +1,12 @@
 .section-height-40 {
-    min-height: 35vh;
+  min-height: 35vh;
 }
 
 .z-index-000 {
-    z-index: -10 !important;
+  z-index: -10 !important;
+}
+
+.hover-danger:hover {
+  cursor: pointer;
+  color: red !important;
 }

@@ -5,6 +5,9 @@ import addRecipe from "./components/addRecipe/addRecipe";
 import Navbar from "./components/Header/navbar";
 import Error from "./components/Error/error";
 import SignIn from "./components/SignIn/signIn";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
 
 import "./style.css";
 import "soft-ui-design-system/assets/css/soft-design-system.min.css";
@@ -15,6 +18,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+
+library.add(fas)
 
 function App() {
   return (

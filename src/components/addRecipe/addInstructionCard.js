@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 class recipeCard extends Component {
   constructor() {
     super();
@@ -100,25 +102,27 @@ class recipeCard extends Component {
         <div id="all-step">
           <div className="form-group">
             <h6>
-              Étape 1
-              <button
-                className="btn btn-sm bg-gradient-danger delete-button"
-                onClick={() => this.handleDelete(1)}
-              >
-                X
-              </button>
+              <div className="d-flex align-items-center justify-content-between">
+                <div>
+                  Étape 1
+                </div>
+                <div>
+                  <FontAwesomeIcon icon="times" className="text-danger hover-danger" onClick={() => this.handleDelete(1)} />
+                </div>
+              </div>
             </h6>
             {this.state.steps.map((step) => (
               <div key={step.step_number}>
                 <p id="step-1">{step.step_description}</p>
                 <h6>
-                  Étape {step.step_number + 1}{" "}
-                  <button
-                    className="btn bg-gradient-danger delete-button"
-                    onClick={() => this.handleDelete(step.step_number + 1)}
-                  >
-                    X
-                  </button>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <div>
+                      Étape {step.step_number + 1}{" "}
+                    </div>
+                    <div>
+                      <FontAwesomeIcon icon="times" className="text-danger hover-danger" onClick={() => this.handleDelete(step.step_number + 1)} />
+                    </div>
+                  </div>
                 </h6>
               </div>
             ))}

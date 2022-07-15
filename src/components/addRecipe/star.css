@@ -1,0 +1,7 @@
+.form-label, label {
+    font-size: 2rem !important;
+}
+
+.form-control {
+    appearance: auto !important;
+}

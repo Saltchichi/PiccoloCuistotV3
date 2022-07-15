@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import chat from "./img/chat.png";
-import lines from "./img/pattern-lines.svg";
 import "./signin.css";
 
 class className extends Component {
@@ -22,7 +20,7 @@ class className extends Component {
                     <p class="mb-0">Enter your email and password to sign in</p>
                   </div>
                   <div class="card-body">
-                    <form role="form">
+                    <form>
                       <div class="mb-3">
                         <input
                           type="email"
@@ -64,12 +62,12 @@ class className extends Component {
                   <div class="card-footer text-center pt-0 px-lg-2 px-1">
                     <p class="mb-4 text-sm mx-auto">
                       Don't have an account?
-                      <a
-                        href="javascript:;"
+                      {/* <a
+                        href="#"
                         class="text-primary text-gradient font-weight-bold"
                       >
                         Sign up
-                      </a>
+                      </a> */}
                     </p>
                   </div>
                 </div>

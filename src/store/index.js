@@ -3,7 +3,7 @@ import { stateReducer } from './state.reducer';
 
 
 const store = configureStore({
-    reducer: { state: stateReducer },
+    reducer: stateReducer,
 });
 
 export default store;

@@ -1,41 +1,33 @@
-import React, { Component } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import { getReceipts } from "../../store/state.selector";
 import Header from "../Header/header";
-import InformationCard from "./informationCard";
+import { InformationCard } from "./informationCard";
 
-class Recipes extends Component {
-  constructor() {
-    super();
+export const Recipes = () => {
+  const receipts = useSelector(getReceipts());
 
-    this.state = {
-      recipes: [],
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <section className="py-4">
-          <div className="container">
-            <div className="row justify-space-between py-2">
-              {this.state.recipes.map((recipe, index) => (
-                <InformationCard
-                  key={index}
-                  id={recipe.recipe_id}
-                  name={recipe.recipe_name}
-                  time={recipe.recipe_time}
-                  difficulty={recipe.recipe_difficulty}
-                  difficultyName={recipe.difficulty_name}
-                  category={recipe.food_category_name}
-                  photo={recipe.recipe_photo_url}
-                ></InformationCard>
-              ))}
-            </div>
+  return (
+    <div>
+      <Header />
+      <section className="py-4">
+        <div className="container">
+          <div className="row justify-space-between py-2">
+            {receipts.map((recipe, index) => (
+              <InformationCard
+                key={index}
+                id={recipe.id}
+                name={recipe.name}
+                time={recipe.time}
+                difficulty={recipe.difficulty}
+                difficultyName={recipe.difficultyName}
+                category={recipe.category}
+                photo={recipe.imgUrl}
+              ></InformationCard>
+            ))}
           </div>
-        </section>
-      </div>
-    );
-  }
-}
-
-export default Recipes;
+        </div>
+      </section>
+    </div>
+  );
+};

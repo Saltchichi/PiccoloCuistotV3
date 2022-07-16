@@ -31,6 +31,8 @@ model Recipe {
   imgUrl           String
   time             Int
   difficulty       Int
+  difficultyName   String
+  category         String
   forHowManyPeople Int
   ingredients      Ingredients[]
   instructions     Instructions[]

@@ -120,7 +120,7 @@ export const InformationCard = (props) => {
               <Link
                 to={{
                   pathname: `/recipe`,
-                  state: { id: props.id },
+                  params: { id: props.id },
                 }}
                 className="text-gradient text-primary"
               >

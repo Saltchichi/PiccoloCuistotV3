@@ -1,8 +1,7 @@
-// Import statements comes here.
 import React, { Component } from "react";
 import Header from "../Header/header";
 import InformationCard from "./informationCard";
-import axios from "axios";
+
 class Recipes extends Component {
   constructor() {
     super();
@@ -10,18 +9,6 @@ class Recipes extends Component {
     this.state = {
       recipes: [],
     };
-  }
-
-  callAPI() {
-    axios.get(`http://localhost:3001/recipes`).then((res) => {
-      const recipes = res.data;
-      this.setState({ recipes });
-      console.log(recipes);
-    });
-  }
-
-  componentWillMount() {
-    this.callAPI();
   }
 
   render() {

@@ -6,6 +6,32 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model Ingredients {
+  ingredientId Int     @id @default(autoincrement())
+  quantity     Int
+  unite        String?
+  name         String
+  Recipe       Recipe  @relation(fields: [ingredientId], references: [id])
+}
+
+model Instructions {
+  instructionId Int    @id @default(autoincrement())
+  step          Int
+  text          String
+  Recipe        Recipe @relation(fields: [instructionId], references: [id])
+}
+
+model Recipe {
+  id               Int            @id @default(autoincrement())
+  name             String
+  imgUrl           String
+  time             Int
+  difficulty       Int
+  forHowManyPeople Int
+  ingredients      Ingredients[]
+  instructions     Instructions[]
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-class recipeCard extends Component {
+class AddInstructionCard extends Component {
   constructor() {
     super();
     this.descriptionRef = React.createRef();
@@ -154,4 +154,4 @@ class recipeCard extends Component {
   }
 }
 
-export default recipeCard;
+export default AddInstructionCard;

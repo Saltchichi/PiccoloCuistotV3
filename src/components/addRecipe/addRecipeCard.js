@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 
-class recipeCard extends Component {
+class AddRecipeCard extends Component {
   constructor() {
     super();
     this.ratingRef = React.createRef();
@@ -136,4 +136,4 @@ class recipeCard extends Component {
   }
 }
 
-export default recipeCard;
+export default AddRecipeCard;

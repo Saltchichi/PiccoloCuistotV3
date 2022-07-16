@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import RecipeCard from "./addRecipeCard";
-import IngredientCard from "./addIngredientCard";
-import InstructionCard from "./addInstructionCard";
+import AddRecipeCard from "./addRecipeCard";
+import AddIngredientCard from "./addIngredientCard";
+import AddInstructionCard from "./addInstructionCard";
 import axios from "axios";
 
 class addRecipe extends Component {
@@ -166,13 +166,13 @@ class addRecipe extends Component {
                 </div>
               </div>
               <div className="col-lg-10 mt-4">
-                <RecipeCard ref={this.recipeRef} id={this.state.id} />
+                <AddRecipeCard ref={this.recipeRef} id={this.state.id} />
               </div>
               <div className="col-lg-4 mt-4">
-                <IngredientCard ref={this.ingredientRef} id={this.state.id} />
+                <AddIngredientCard ref={this.ingredientRef} id={this.state.id} />
               </div>
               <div className="col-lg-6 mt-4">
-                <InstructionCard ref={this.stepRef} id={this.state.id} />
+                <AddInstructionCard ref={this.stepRef} id={this.state.id} />
               </div>
             </div>
             <div className="text-danger">{this.state.error_message}</div>

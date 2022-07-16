@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-class ingredientCard extends Component {
+
+class AddIngredientCard extends Component {
   constructor() {
     super();
     this.quantityRef = React.createRef();
@@ -160,4 +161,4 @@ class ingredientCard extends Component {
   }
 }
 
-export default ingredientCard;
+export default AddIngredientCard;

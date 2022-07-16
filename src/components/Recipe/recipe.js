@@ -2,11 +2,9 @@ import React from "react";
 import RecipeCard from "./recipeCard";
 import IngredientCard from "./ingredientCard";
 import InstructionCard from "./instructionCard";
-import { useSelector } from "react-redux";
-import { getReceipById } from "../../store/state.selector";
 
 const Recipe = (data) => {
-  const receip = useSelector(getReceipById(data.location.params.id));
+  const receip = data.location.params.props;
 
   const handleDelete = () => {};
 

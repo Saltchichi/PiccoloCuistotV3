@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class ingredientCard extends Component {
   constructor() {
     super();
@@ -14,7 +14,6 @@ class ingredientCard extends Component {
       isValid: false,
     };
   }
-
 
   handleChangeQuantity = (e) => {
     const re = /^[0-9\b]+$/;
@@ -147,7 +146,11 @@ class ingredientCard extends Component {
                   </b>{" "}
                   {ingredient.ingredient_name}
                 </div>
-                <FontAwesomeIcon icon="times" className="text-danger hover-danger" onClick={() => this.handleDelete(ingredient.id)} />
+                <FontAwesomeIcon
+                  icon="times"
+                  className="text-danger hover-danger"
+                  onClick={() => this.handleDelete(ingredient.id)}
+                />
               </div>
             </li>
           ))}

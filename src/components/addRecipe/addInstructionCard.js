@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class recipeCard extends Component {
   constructor() {
@@ -89,7 +89,7 @@ class recipeCard extends Component {
         this.setState({ steps, idStep: idStep + 1, isValid: true });
       })
       .catch((err) => {
-        console.error(err);
+        console.warn(err);
       });
   }
 
@@ -103,11 +103,13 @@ class recipeCard extends Component {
           <div className="form-group">
             <h6>
               <div className="d-flex align-items-center justify-content-between">
+                <div>Étape 1</div>
                 <div>
-                  Étape 1
-                </div>
-                <div>
-                  <FontAwesomeIcon icon="times" className="text-danger hover-danger" onClick={() => this.handleDelete(1)} />
+                  <FontAwesomeIcon
+                    icon="times"
+                    className="text-danger hover-danger"
+                    onClick={() => this.handleDelete(1)}
+                  />
                 </div>
               </div>
             </h6>
@@ -116,11 +118,13 @@ class recipeCard extends Component {
                 <p id="step-1">{step.step_description}</p>
                 <h6>
                   <div className="d-flex align-items-center justify-content-between">
+                    <div>Étape {step.step_number + 1} </div>
                     <div>
-                      Étape {step.step_number + 1}{" "}
-                    </div>
-                    <div>
-                      <FontAwesomeIcon icon="times" className="text-danger hover-danger" onClick={() => this.handleDelete(step.step_number + 1)} />
+                      <FontAwesomeIcon
+                        icon="times"
+                        className="text-danger hover-danger"
+                        onClick={() => this.handleDelete(step.step_number + 1)}
+                      />
                     </div>
                   </div>
                 </h6>

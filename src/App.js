@@ -4,7 +4,6 @@ import Recipe from "./components/Recipe/recipe";
 import addRecipe from "./components/addRecipe/addRecipe";
 import Navbar from "./components/Header/navbar";
 import Error from "./components/Error/error";
-import SignIn from "./components/SignIn/signIn";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
@@ -29,7 +28,6 @@ function App() {
         <Route exact path="/" component={Recipes} />
         <Route exact path="/404" component={Error} />
         <Route exact path="/recipe" component={Recipe} />
-        <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/addRecipe" component={addRecipe} />
         <Redirect to="/404" />
       </Switch>

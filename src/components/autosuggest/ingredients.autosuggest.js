@@ -1,7 +1,6 @@
 // basic.autosuggest.js
 import React from "react";
 import Autosuggest from "react-autosuggest";
-import axios from "axios";
 
 class IngredientAutoSuggest extends React.Component {
   constructor() {
@@ -61,17 +60,6 @@ class IngredientAutoSuggest extends React.Component {
       suggestions: [],
     });
   };
-
-  componentWillMount() {
-    this.callAPI();
-  }
-
-  callAPI() {
-    axios.get(`http://localhost:3001/ingredients`).then((res) => {
-      const ingredients = res.data;
-      this.setState({ ingredients });
-    });
-  }
 
   render() {
     const { value, suggestions } = this.state;

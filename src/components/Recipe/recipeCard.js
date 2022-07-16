@@ -4,7 +4,6 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 
 class recipeCard extends Component {
   constructor() {
@@ -13,25 +12,6 @@ class recipeCard extends Component {
       recipeInfo: "",
       star: "",
     };
-  }
-
-  callAPI() {
-    axios
-      .get(`http://localhost:3001/recipe/info/${this.props.id}`)
-      .then((response) => {
-        const recipeInfo = response.data[0];
-        this.setState({ recipeInfo });
-
-        const star = 3 - recipeInfo.recipe_difficulty;
-        this.setState({ star });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  componentDidMount() {
-    this.callAPI();
   }
 
   render() {

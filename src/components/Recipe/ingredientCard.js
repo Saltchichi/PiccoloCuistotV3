@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class recipeCard extends Component {
   constructor(props) {
@@ -7,22 +6,6 @@ class recipeCard extends Component {
     this.state = {
       ingredients: [],
     };
-  }
-
-  callAPI() {
-    axios
-      .get(`http://localhost:3001/recipe/info/ingredients/${this.props.id}`)
-      .then((response) => {
-        const ingredients = response.data;
-        this.setState({ ingredients });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  componentDidMount() {
-    this.callAPI();
   }
 
   render() {

@@ -1,7 +1,6 @@
 // basic.autosuggest.js
 import React from "react";
 import Autosuggest from "react-autosuggest";
-import axios from "axios";
 
 class MeasurementAutoSuggest extends React.Component {
   constructor() {
@@ -66,17 +65,6 @@ class MeasurementAutoSuggest extends React.Component {
       suggestions: [],
     });
   };
-
-  componentWillMount() {
-    this.callAPI();
-  }
-
-  callAPI() {
-    axios.get(`http://localhost:3001/measurements`).then((res) => {
-      const measurements = res.data;
-      this.setState({ measurements });
-    });
-  }
 
   render() {
     const { value, suggestions } = this.state;

@@ -1,27 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 class recipeCard extends Component {
   constructor() {
     super();
     this.state = {
       steps: [],
     };
-  }
-
-  callAPI() {
-    axios
-      .get(`http://localhost:3001/recipe/info/steps/${this.props.id}`)
-      .then((response) => {
-        const steps = response.data;
-        this.setState({ steps });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  componentDidMount() {
-    this.callAPI();
   }
 
   render() {

@@ -4,7 +4,6 @@ import "./star.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 
 class recipeCard extends Component {
   constructor() {
@@ -22,43 +21,6 @@ class recipeCard extends Component {
       isValidName: false,
       recipeInfo: "",
     };
-  }
-
-  callAPI() {
-    axios.get(`http://localhost:3001/food_category`).then((res) => {
-      const foodCategory = res.data;
-      this.setState({ foodCategory });
-    });
-  }
-
-  getData() {
-    axios
-      .get(`http://localhost:3001/recipe/info/${this.props.id}`)
-      .then((response) => {
-        const recipeInfo = response.data[0];
-        this.setState({
-          selectedName: recipeInfo.recipe_name,
-          isValidName: true,
-          selectedTime: recipeInfo.recipe_time,
-          isValidTime: true,
-          selectedDifficulty: recipeInfo.recipe_difficulty,
-          isValidDifficulty: true,
-          selectedFoodCategory: recipeInfo.food_category_id,
-        });
-        this.ratingRef.current.setState({
-          value: recipeInfo.recipe_difficulty,
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  componentWillMount() {
-    this.callAPI();
-    if (this.props.id !== "") {
-      this.getData();
-    }
   }
 
   handleChangeFoodCategory = (e) => {

@@ -12,25 +12,6 @@ class Recipe extends Component {
     };
   }
 
-  callAPI() {
-    axios
-      .get(
-        `http://localhost:3001/recipe/info/photo/${this.props.location.state.id}`
-      )
-      .then((res) => {
-        const recipe_photo_url = res.data[0].recipe_photo_url;
-        this.setState({ recipe_photo_url });
-      });
-  }
-
-  componentWillMount() {
-    const { id } = this.props.location.state;
-    this.setState({
-      id: id,
-    });
-    this.callAPI();
-  }
-
   handleDelete = () => {
     if (window.confirm("Etes-vous sûr de vouloir supprimer cette recette ?")) {
       axios

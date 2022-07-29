@@ -4,8 +4,8 @@ import Recipe from "./components/Recipe/recipe";
 import { AddRecipe } from "./components/addRecipe/addRecipe";
 import { Navbar } from "./components/Header/navbar";
 import { Error } from "./components/Error/error";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 
 import "./style.css";
 import "soft-ui-design-system/assets/css/soft-design-system.min.css";

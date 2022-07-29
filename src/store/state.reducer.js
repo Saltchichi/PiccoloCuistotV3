@@ -35,6 +35,8 @@ export const initialState = {
 
 export function stateReducer(state = initialState, action) {
   switch (action.type) {
+    case "userLoggedIn":
+      return { ...state, user: action.user };
     default:
       return state;
   }

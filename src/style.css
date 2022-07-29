@@ -10,3 +10,9 @@
   cursor: pointer;
   color: red !important;
 }
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+.dropdown.dropdown-hover:hover>.dropdown-menu:before, .dropdown .dropdown-menu.show:before {
+  top: -18px !important;
+}

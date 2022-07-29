@@ -10,6 +10,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import "./style.css";
 import "soft-ui-design-system/assets/css/soft-design-system.min.css";
 
+
 import {
   BrowserRouter as Router,
   Switch,

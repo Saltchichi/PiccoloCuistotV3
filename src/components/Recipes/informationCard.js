@@ -6,16 +6,16 @@ import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 
-export const InformationCard = (props) => {
-  const star = 3 - props.difficulty;
+export const InformationCard = ({ recipe }) => {
+  const star = 3 - recipe.difficulty;
 
   return (
-    <div key={props.id} className="col-md-6 col-lg-4 mt-4">
+    <div key={recipe.id} className="col-md-6 col-lg-4 mt-4">
       <div className="card">
         <img
           className="card-img-top img-fluid"
           alt="recette"
-          src={props.photo}
+          src={recipe.imgUrl}
           style={{ height: "275px" }}
         />
         <div
@@ -79,13 +79,13 @@ export const InformationCard = (props) => {
           </div>
         </div>
         <div className="card-body">
-          <h4 className="text-center">{props.name}</h4>
+          <h4 className="text-center">{recipe.name}</h4>
           <hr className="horizontal dark" />
           <div className="row">
             <div className="col-4">
               <div className="text-center">
                 <h4 className="text-gradient text-primary">
-                  <FontAwesomeIcon icon={faClock} /> {props.time}{" "}
+                  <FontAwesomeIcon icon={faClock} /> {recipe.time}{" "}
                 </h4>
                 <p>Minutes</p>
               </div>
@@ -93,14 +93,14 @@ export const InformationCard = (props) => {
             <div className="col-4">
               <div className="text-center">
                 <p className="text-gradient text-primary">
-                  {[...Array(props.difficulty)].map((e, i) => {
+                  {[...Array(recipe.difficulty)].map((e, i) => {
                     return <FontAwesomeIcon icon={faStarSolid} key={i} />;
                   })}
                   {[...Array(star)].map((e, i) => {
                     return <FontAwesomeIcon icon={faStar} key={i} />;
                   })}
                 </p>
-                <p>{props.difficultyName}</p>
+                <p>{recipe.difficultyName}</p>
               </div>
             </div>
             <div className="col-4">
@@ -108,7 +108,7 @@ export const InformationCard = (props) => {
                 <h4 className="text-gradient text-primary" id="state3">
                   <FontAwesomeIcon icon={faUtensils} />
                 </h4>
-                <p>{props.category}</p>
+                <p>{recipe.category}</p>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ export const InformationCard = (props) => {
               <Link
                 to={{
                   pathname: `/recipe`,
-                  params: { props },
+                  params: { recipe },
                 }}
                 className="text-gradient text-primary"
               >

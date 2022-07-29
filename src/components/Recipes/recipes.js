@@ -14,16 +14,7 @@ export const Recipes = () => {
         <div className="container">
           <div className="row justify-space-between py-2">
             {receipts.map((recipe, index) => (
-              <InformationCard
-                key={index}
-                id={recipe.id}
-                name={recipe.name}
-                time={recipe.time}
-                difficulty={recipe.difficulty}
-                difficultyName={recipe.difficultyName}
-                category={recipe.category}
-                photo={recipe.imgUrl}
-              ></InformationCard>
+              <InformationCard key={index} recipe={recipe}></InformationCard>
             ))}
           </div>
         </div>

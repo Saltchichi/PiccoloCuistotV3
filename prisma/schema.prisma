@@ -15,18 +15,18 @@ model Ingredients {
   quantity     Int
   unite        String?
   name         String
-  Recipe       Recipe  @relation(fields: [ingredientId], references: [id])
+  Recipe       Recipe  @relation(fields: [ingredientId], references: [recipeId])
 }
 
 model Instructions {
   instructionId Int    @id @default(autoincrement())
   step          Int
   text          String
-  Recipe        Recipe @relation(fields: [instructionId], references: [id])
+  Recipe        Recipe @relation(fields: [instructionId], references: [recipeId])
 }
 
 model Recipe {
-  id               Int            @id @default(autoincrement())
+  recipeId         Int            @id @default(autoincrement())
   name             String
   imgUrl           String
   time             Int
@@ -36,4 +36,13 @@ model Recipe {
   forHowManyPeople Int
   ingredients      Ingredients[]
   instructions     Instructions[]
+  User             User           @relation(fields: [recipeId], references: [userId])
+}
+
+model User {
+  userId  Int      @id @default(autoincrement())
+  email   String
+  nom     String
+  prenom  String
+  recipes Recipe[]
 }

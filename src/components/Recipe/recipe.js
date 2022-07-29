@@ -1,10 +1,18 @@
 import React from "react";
-import RecipeCard from "./recipeCard";
+import { RecipeCard } from "./recipeCard";
 import IngredientCard from "./ingredientCard";
 import InstructionCard from "./instructionCard";
 
 const Recipe = (data) => {
-  const receip = data.location.params.props;
+  const receip = data.location.params.recipe;
+
+  const informationProps = {
+    name: receip.name,
+    time: receip.time,
+    difficulty: receip.difficulty,
+    difficultyName: receip.difficultyName,
+    category: receip.category,
+  };
 
   const handleDelete = () => {};
 
@@ -35,14 +43,14 @@ const Recipe = (data) => {
           </div>
           <div className="row">
             <div className="col-lg-10">
-              <RecipeCard id={receip.id} />
+              <RecipeCard informationProps={informationProps} />
             </div>
             <div className="col-lg-2"></div>
             <div className="col-lg-4 mt-4">
-              <IngredientCard id={receip.id} />
+              <IngredientCard id={receip.ingredients} />
             </div>
             <div className="col-lg-6 mt-4">
-              <InstructionCard id={receip.id} />
+              <InstructionCard id={receip.instructions} />
             </div>
           </div>
           <div className="d-flex justify-content-center">

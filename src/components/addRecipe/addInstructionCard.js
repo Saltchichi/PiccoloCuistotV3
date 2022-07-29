@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const AddInstructionCard = ({ temporaryNewRecipe }) => {
-  const { instructions } = temporaryNewRecipe;
-  console.warn("instructions", instructions);
+export const AddInstructionCard = ({
+  temporaryNewRecipeData,
+  setTemporaryNewRecipeData,
+}) => {
+  const { instructions } = temporaryNewRecipeData;
+  const [step, setStep] = useState(1);
+
   const addInstructions = (e) => {
     e.preventDefault();
-    console.warn(e.target[0].value)
+    const text = e.target[0].value;
+    const newInstruction = { step: step, text: text };
+
+    setTemporaryNewRecipeData({
+      instructions: [...temporaryNewRecipeData.instructions, newInstruction],
+    });
+    setStep(step + 1);
   };
+
+  const deleteInstruction = (step) => {
+    console.warn('step', step);
+  }
 
   return (
     <div className="card d-flex blur justify-content-center p-4 shadow-sm my-sm-0">
@@ -16,25 +30,25 @@ export const AddInstructionCard = ({ temporaryNewRecipe }) => {
       </div>
       <div id="all-step">
         <div className="form-group">
-          {instructions &&
-            instructions.map((instruction) => (
-              <div>
-                <h6>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <div>Étape 1</div>
-                    <div>
-                      <FontAwesomeIcon
-                        icon="times"
-                        className="text-danger hover-danger"
-                      />
-                    </div>
+          {instructions.map((instruction) => (
+            <div key={instruction.step}>
+              <h6>
+                <div className="d-flex align-items-center justify-content-between">
+                  <div>Étape {instruction.step}</div>
+                  <div>
+                    <FontAwesomeIcon
+                      icon="times"
+                      className="text-danger hover-danger"
+                      onClick={() => deleteInstruction(instruction.step)}
+                    />
                   </div>
-                </h6>
-                <div>
-                  <p id="step-1"> test</p>
                 </div>
+              </h6>
+              <div>
+                <p id="step-1">{instruction.text}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
       <form onSubmit={addInstructions}>

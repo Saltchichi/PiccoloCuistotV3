@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { AddRecipeCard } from "./addRecipeCard";
 import AddIngredientCard from "./addIngredientCard";
 import { AddInstructionCard } from "./addInstructionCard";
 import axios from "axios";
 
 export const AddRecipe = () => {
-  const temporaryNewRecipe = {
+  const [temporaryNewRecipeData, setTemporaryNewRecipeData] = useState({
     name: "",
     time: 0,
     difficulty: 1,
@@ -14,7 +14,7 @@ export const AddRecipe = () => {
     imgUrl: "",
     ingredients: [],
     instructions: [],
-  };
+  });
 
   const getPhoto = () => {
     axios
@@ -27,13 +27,14 @@ export const AddRecipe = () => {
       });
   };
 
+  console.warn("temporaryNewRecipe", temporaryNewRecipeData);
   return (
     <div>
       <div>
         <img
           className="position-absolute fixed-top ms-auto w-50 z-index-000 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0"
           alt="recette"
-          src={temporaryNewRecipe.imgUrl}
+          src={temporaryNewRecipeData.imgUrl}
         />
       </div>
       <div
@@ -46,7 +47,7 @@ export const AddRecipe = () => {
               <img
                 className="w-100 border-radius-xl mt-7 ms-lg-5 position-relative"
                 alt="recette responsive"
-                src={temporaryNewRecipe.imgUrl}
+                src={temporaryNewRecipeData.imgUrl}
               />
             </div>
           </div>
@@ -64,13 +65,22 @@ export const AddRecipe = () => {
               </div>
             </div>
             <div className="col-lg-10 mt-4">
-              <AddRecipeCard temporaryNewRecipe={temporaryNewRecipe} />
+              <AddRecipeCard
+                temporaryNewRecipeData={temporaryNewRecipeData}
+                setTemporaryNewRecipeData={setTemporaryNewRecipeData}
+              />
             </div>
             <div className="col-lg-4 mt-4">
-              <AddIngredientCard temporaryNewRecipe={temporaryNewRecipe} />
+              <AddIngredientCard
+                temporaryNewRecipeData={temporaryNewRecipeData}
+                setTemporaryNewRecipeData={setTemporaryNewRecipeData}
+              />
             </div>
             <div className="col-lg-6 mt-4">
-              <AddInstructionCard temporaryNewRecipe={temporaryNewRecipe} />
+              <AddInstructionCard
+                temporaryNewRecipeData={temporaryNewRecipeData}
+                setTemporaryNewRecipeData={setTemporaryNewRecipeData}
+              />
             </div>
           </div>
           <div className="d-flex justify-content-center">

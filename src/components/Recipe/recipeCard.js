@@ -6,7 +6,9 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 
 export const RecipeCard = ({ informationProps }) => {
-  console.warn("recipeInfos", informationProps);
+  if (!informationProps) {
+    return;
+  }
 
   return (
     <div className="card d-flex blur justify-content-center p-3 shadow-sm my-sm-0 mb-sm-3 mt-sm-7 mt-4 mb-2">
@@ -17,8 +19,7 @@ export const RecipeCard = ({ informationProps }) => {
         <div className="col-md-4 position-relative">
           <div className="p-4 text-center">
             <h4 className="text-gradient text-primary">
-              <FontAwesomeIcon icon={faClock} />{" "}
-              {informationProps.time}
+              <FontAwesomeIcon icon={faClock} /> {informationProps.time}
             </h4>
             <h4 className="text-gradient text-primary">Minutes</h4>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { RecipeCard } from "./recipeCard";
-import IngredientCard from "./ingredientCard";
-import InstructionCard from "./instructionCard";
+import { IngredientCard } from "./ingredientCard";
+import { InstructionCard } from "./instructionCard";
 
 const Recipe = (data) => {
   const receip = data.location.params.recipe;
@@ -47,10 +47,10 @@ const Recipe = (data) => {
             </div>
             <div className="col-lg-2"></div>
             <div className="col-lg-4 mt-4">
-              <IngredientCard id={receip.ingredients} />
+              <IngredientCard ingredients={receip.ingredients} />
             </div>
             <div className="col-lg-6 mt-4">
-              <InstructionCard id={receip.instructions} />
+              <InstructionCard instructions={receip.instructions} />
             </div>
           </div>
           <div className="d-flex justify-content-center">

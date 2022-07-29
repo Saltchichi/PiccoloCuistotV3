@@ -12,12 +12,15 @@ export const InformationCard = ({ recipe }) => {
   return (
     <div key={recipe.id} className="col-md-6 col-lg-4 mt-4">
       <div className="card">
-        <img
-          className="card-img-top img-fluid"
-          alt="recette"
-          src={recipe.imgUrl}
-          style={{ height: "275px" }}
-        />
+        <div>
+          <img
+            className="card-img-top img-fluid"
+            alt="recette"
+            src={recipe.imgUrl}
+            style={{ height: "275px" }}
+          />
+        </div>
+
         <div
           className="position-relative overflow-hidden"
           style={{ height: "50px", marginTop: "-50px" }}

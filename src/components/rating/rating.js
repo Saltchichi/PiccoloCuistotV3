@@ -1,53 +1,40 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 
-const labels = {
+export const labels = {
   1: "Facile",
   2: "Moyen",
   3: "Difficile",
 };
 
-class rating extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: 1,
-      hover: -1,
-    };
-  }
+export const Ratings = ({ handleDifficulty }) => {
+  const [value, setValue] = useState(1);
+  const [hover, setHover] = useState(-1);
 
-  render() {
-    return (
-      <div>
-        <Rating
-          name="hover-feedback"
-          value={this.state.value}
-          precision={1}
-          min={1}
-          max={3}
-          onChange={(event, newValue) => {
-            this.setState({ value: newValue });
-            this.props.handleDifficulty(newValue);
-          }}
-          onChangeActive={(event, newHover) => {
-            this.setState({ hover: newHover });
-          }}
-        />
-        {this.state.value !== null && (
-          <Box ml={2}>
-            <h4 className="text-gradient text-primary">
-              {
-                labels[
-                  this.state.hover !== -1 ? this.state.hover : this.state.value
-                ]
-              }
-            </h4>
-          </Box>
-        )}
-      </div>
-    );
-  }
-}
-
-export default rating;
+  return (
+    <div>
+      <Rating
+        name="hover-feedback"
+        value={value}
+        precision={1}
+        min={1}
+        max={3}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+          handleDifficulty(newValue);
+        }}
+        onChangeActive={(event, newHover) => {
+          setHover(newHover);
+        }}
+      />
+      {value && (
+        <Box ml={2}>
+          <h4 className="text-gradient text-primary">
+            {labels[hover !== -1 ? hover : value]}
+          </h4>
+        </Box>
+      )}
+    </div>
+  );
+};

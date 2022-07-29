@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getReceipts } from "../../store/state.selector";
-import Header from "../Header/header";
+import { Header } from "../Header/header";
 import { InformationCard } from "./informationCard";
 
 export const Recipes = () => {

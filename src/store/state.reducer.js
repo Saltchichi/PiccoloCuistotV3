@@ -8,7 +8,7 @@ export const initialState = {
       difficultyName: "difficile",
       category: "dessert",
       imgUrl:
-        "https://www.regal.fr/sites/art-de-vivre/files/r70_belle-ile-tarte-pomme-beurre-sale_ss.jpg",
+        "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/house.jpg",
       ingredients: [
         { ingredientId: 1, quantity: 500, unite: "g", name: "sucre" },
         { ingredientId: 2, quantity: 1, unite: "kg", name: "farine" },
@@ -29,6 +29,16 @@ export const initialState = {
       category: "dessert",
       imgUrl:
         "https://www.yumelise.fr/wp-content/uploads/2020/08/tarte-pommes-flamande.jpg",
+    },
+    {
+      recipeId: 3,
+      name: "test3",
+      time: 90,
+      difficulty: 3,
+      difficultyName: "difficile",
+      category: "dessert",
+      imgUrl:
+        "https://assets.afcdn.com/recipe/20200408/109520_w1024h1024c1cx1866cy2800.jpg",
     },
   ],
 };

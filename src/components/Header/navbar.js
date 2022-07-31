@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import { signInWithGoogle } from "../../FirebaseAuthentication";
@@ -51,31 +51,31 @@ export const Navbar = () => {
                   <FontAwesomeIcon icon="chevron-down" />
 
                 </a>
-                <div className="dropdown-menu dropdown-menu-animation dropdown-lg mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                <div className="dropdown-menu dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
                   <div className="d-none d-lg-block">
                     <ul className="list-group">
                       <li className="nav-item list-group-item border-0 p-0">
-                        <a class="dropdown-item py-2 ps-3 border-radius-md" href="#">
-                          <div class="d-flex">
-                            <div class="icon h-10 me-3 d-flex mt-1">
+                        <a className="dropdown-item py-2 ps-3 border-radius-md" href="#">
+                          <div className="d-flex">
+                            <div className="icon h-10 me-3 d-flex mt-1">
                               <FontAwesomeIcon icon="user" />
                             </div>
                             <div>
-                              <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Mes informations</h6>
-                              <span class="text-sm">Mettre à jour mes informations</span>
+                              <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Mes informations</h6>
+                              <span className="text-sm">Mettre à jour mes informations</span>
                             </div>
                           </div>
                         </a>
                       </li>
                       <li className="nav-item list-group-item border-0 p-0">
-                        <a class="dropdown-item py-2 ps-3 border-radius-md" href="#">
-                          <div class="d-flex">
-                            <div class="icon h-10 me-3 d-flex mt-1">
+                        <a className="dropdown-item py-2 ps-3 border-radius-md" href="#">
+                          <div className="d-flex">
+                            <div className="icon h-10 me-3 d-flex mt-1">
                               <FontAwesomeIcon icon="arrow-right-from-bracket" />
                             </div>
                             <div>
-                              <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Se déconnecter</h6>
-                              <span class="text-sm">Deconnexion de Piccolo Cuistot</span>
+                              <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Se déconnecter</h6>
+                              <span className="text-sm">Deconnexion de Piccolo Cuistot</span>
                             </div>
                           </div>
                         </a>

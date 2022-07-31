@@ -1,4 +1,5 @@
 import React from "react";
+import { SearchBar } from "./searchBar";
 
 export const Header = () => {
   return (
@@ -50,6 +51,7 @@ export const Header = () => {
         className="position-relative overflow-hidden"
         style={{ height: "36px", marginTop: "-33px" }}
       ></div>
+      <SearchBar/>
     </header>
   );
 };

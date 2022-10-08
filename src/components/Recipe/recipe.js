@@ -28,7 +28,7 @@ const Recipe = (data) => {
           <img
             className="position-absolute fixed-top ms-auto w-50 z-index-000 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0"
             alt="recette"
-            src={receip.photo}
+            src={receip.imgUrl}
           />
         </div>
         <div className="container">
@@ -37,7 +37,7 @@ const Recipe = (data) => {
               <img
                 className="w-100 border-radius-xl mt-7 ms-lg-5 position-relative"
                 alt="recette responsive"
-                src={receip.photo}
+                src={receip.imgUrl}
               />
             </div>
           </div>

@@ -27,7 +27,6 @@ export const AddRecipe = () => {
       });
   };
 
-  console.warn("temporaryNewRecipe", temporaryNewRecipeData);
   return (
     <div>
       <div>

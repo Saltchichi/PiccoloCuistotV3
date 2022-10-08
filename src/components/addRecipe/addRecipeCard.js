@@ -35,7 +35,6 @@ export const AddRecipeCard = () => {
   const handleChangeTime = (e) => {
     const value = e.target.value;
     const re = /^[0-9\b]+$/;
-    console.warn('e.target.value', e.target.value, re.test(e.target.value));
     if (value !== "" || re.test(value)) {
       baseRecipeAdd.selectedTime = e.target.value;
     }
@@ -44,7 +43,6 @@ export const AddRecipeCard = () => {
     } else {
       baseRecipeAdd.isValidTime = false;
     }
-    console.warn('baseRecipeAdd', baseRecipeAdd);
   };
 
   const handleDifficulty = (value) => {

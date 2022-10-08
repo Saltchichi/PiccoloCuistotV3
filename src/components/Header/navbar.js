@@ -20,39 +20,31 @@ export const Navbar = () => {
   return (
 
     <nav
-      className="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
+      className="navbar navbar-expand position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
       <div className="container">
         <div className="navbar-brand font-weight-bolder ms-sm-3">
           <Link className="text-white" to={{ pathname: `/` }}>Piccolo Cuistot</Link>
         </div>
-        <button className="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon mt-2">
-            <span className="navbar-toggler-bar bar1"></span>
-            <span className="navbar-toggler-bar bar2"></span>
-            <span className="navbar-toggler-bar bar3"></span>
-          </span>
-        </button>
         <div className="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
           <ul className="navbar-nav navbar-nav-hover mx-auto">
 
           </ul>
 
-          <ul className="navbar-nav d-lg-block d-none">
+          <ul className="navbar-nav d-block">
             {!user ?
-              <div className="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0" onClick={handleConnection}>
+              <div className="btn btn-sm  bg-gradient-primary  btn-round mt-1" onClick={handleConnection}>
                 Se connecter
-
               </div>
               :
               <li className="nav-item dropdown dropdown-hover mx-2">
                 <a className="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img className="avatar avatar-md rounded-circle" alt="Image placeholder" src={user.profilePic} />
+                  <img className="avatar avatar-sm rounded-circle d-none d-lg-block" alt="Image placeholder" src={user.profilePic} />
                   <span className="mx-2"> {user.displayName}</span>
                   <FontAwesomeIcon icon="chevron-down" />
 
                 </a>
-                <div className="dropdown-menu dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
-                  <div className="d-none d-lg-block">
+                <div className="dropdown-menu dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-2 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                  <div className="d-block">
                     <ul className="list-group">
                       <li className="nav-item list-group-item border-0 p-0">
                         <a className="dropdown-item py-2 ps-3 border-radius-md" href="#">
@@ -61,8 +53,8 @@ export const Navbar = () => {
                               <FontAwesomeIcon icon="user" />
                             </div>
                             <div>
-                              <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Mes informations</h6>
-                              <span className="text-sm">Mettre à jour mes informations</span>
+                              <h6 className="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">Mes informations</h6>
+                              {/* <span className="text-sm">Mettre à jour mes informations</span> */}
                             </div>
                           </div>
                         </a>
@@ -74,8 +66,8 @@ export const Navbar = () => {
                               <FontAwesomeIcon icon="arrow-right-from-bracket" />
                             </div>
                             <div>
-                              <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Se déconnecter</h6>
-                              <span className="text-sm">Deconnexion de Piccolo Cuistot</span>
+                              <h6 className="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">Se déconnecter</h6>
+                              {/* <span className="text-sm">Deconnexion de Piccolo Cuistot</span> */}
                             </div>
                           </div>
                         </a>
